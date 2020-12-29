@@ -6,6 +6,12 @@ The next phase in CSS was development of libraries and frameworks. These librari
 
 The CSS frameworks like Boostrap however have one major disadvantage that came about from increased growth and usage. They became too big and offered less control over the styles. The learning path became hard since the developer has to learn hundreds of classes that are pre-written.
 
+In this article, we will cover:
+
+- What Tailwindcss is,
+- Different ways to install it,
+- and How to use utility-based classes over normal prewritten classes.
+
 ### What is Tailwindcss
 
 Tailwindcss is also a CSS framework created by [Adam Wathan](https://twitter.com/adamwathan). Unlike other frameworks, it does not come prebuilt with classes that you can just add to the HTML tags and apply styling instantly. Instead it uses a different approach. It brings a much lower level of control by using utility-based classes.
@@ -124,19 +130,28 @@ This command will create a tailwind.css file in a css folder. We then need to ad
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/tailwind.css">
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="css/tailwind.css" />
+  </head>
+  <body></body>
 </html>
-
 ```
 
 And just like that we have everything set up.
 
 ### Working with Utility Classes
+
+To demonstrate and explain how utility classes work, let's create button using tailwindcss and see how they affect the element.
+
+Within the Body tags in the HTML page, add:
+
+```html
+<button>Section</button>
+```
+
+Let's add some classes to it now. First, Our button looks plain. In tailwind, color is based on the color intensity ranging from 100 to 900 and the utility class for background is ```bg```. Therefore, to make our button's background a faint shade of green we add a class ```bg-green-100```.
+
+Next, lets style the text. The 
