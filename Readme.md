@@ -73,4 +73,37 @@ In the terminal run :
 npx tailwind init -p
 ```
 
-It will generate two files, ```tailwind.config.js``` and ```postcss.config.js```.
+It will generate two files, `tailwind.config.js` and `postcss.config.js`.
+The tailwind.config.js looks like this:
+
+```js
+module.exports = {
+  purge: [],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+
+and the postcss.config.js should look like this:
+
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+```
+
+We set up the environment, now let's setup tailwind in our project.
+
+Lets create 2 files. A html page called ```index.html``` and a stylesheet called ```style.css```
+
+And just like that we have everything set up.
+### Working with Utility Classes
