@@ -103,7 +103,40 @@ module.exports = {
 
 We set up the environment, now let's setup tailwind in our project.
 
-Lets create 2 files. A html page called ```index.html``` and a stylesheet called ```style.css```
+Lets create 2 files. A html page called `index.html` and a stylesheet called `style.css`.
+
+The html part can have the basic boilerplate syntax for html. In the CSS file, we need to tell autoprefixer that we will use tailwind. We do this by importing the tailwind files as shown below:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+Finally, we need to build our tailwindcss, so in the terminal run:
+
+```js
+npx tailwindcss-cli@latest build -o css/tailwind.css
+```
+
+This command will create a tailwind.css file in a css folder. We then need to add our tailwind file to the html like we would a normal css file.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/tailwind.css">
+</head>
+<body>
+    
+</body>
+</html>
+
+```
 
 And just like that we have everything set up.
+
 ### Working with Utility Classes
