@@ -57,4 +57,20 @@ mkdir section-tailwind-demo && cd section-tailwind-demo
 npm init -y // to initialize npm with everything set to true or yes
 ```
 
-Now let's install tailwindcss. We need a few things alongside tailwindcss. We need a preprocessor and a vendor prefix generator. 
+Now let's install tailwindcss. We need a few things alongside tailwindcss. We need a preprocessor because tailwind relies on a prepocessor. Tailwind uses a postcss plugin called autoprefixer to transpile the css into vanilla css.
+
+In the terminal run :
+
+```terminal
+npm install tailwindcss@latest postcss@latest autoprefixer@latest
+```
+
+the command above will install all the dependencies we need. Next we have to create script for tailwind and postcss to tell configure them. To generate the scripts we make use of the tailwind CSS utility provided by tailwindcss.
+
+In the terminal run :
+
+```terminal
+npx tailwind init -p
+```
+
+It will generate two files, ```tailwind.config.js``` and ```postcss.config.js```.
