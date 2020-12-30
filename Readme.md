@@ -9,7 +9,7 @@ The CSS frameworks like Boostrap however have one major disadvantage that came a
 In this article, we will cover:
 
 - What Tailwindcss is,
-- Different ways to install it,
+- Different ways to install and configure tailwind,
 - and How to use utility-based classes over normal prewritten classes.
 
 ### What is Tailwindcss
@@ -125,7 +125,25 @@ Finally, we need to build our tailwindcss, so in the terminal run:
 npx tailwindcss-cli@latest build -o css/tailwind.css
 ```
 
-This command will create a tailwind.css file in a css folder. We then need to add our tailwind file to the html like we would a normal css file.
+This command will create a tailwind.css file in a css folder. The `-o` in the command stands for the output path and we specified that our output file will be in the _css/tailwind.css_ path
+
+A different way of processing the css is to do it in production by adding a script in the `package.json`. We will use the postcss cli to run the operation during build time.
+
+To do this, let's install postcss cli. Run this in the terminal:
+
+`npm install postcss-cli`
+
+Then we now add the build script in the package.json like this:
+
+```json
+ "scripts": {
+    "build": "postcss style.css -o css/tailwind.css"
+  }
+```
+
+Now, when you run `npm run build` it should compile the tailwind css file into a css folder, just as we wanted.
+
+We then need to add our tailwind file to the html like we would a normal css file.
 
 ```html
 <!DOCTYPE html>
@@ -152,6 +170,53 @@ Within the Body tags in the HTML page, add:
 <button>Section</button>
 ```
 
-Let's add some classes to it now. First, Our button looks plain. In tailwind, color is based on the color intensity ranging from 100 to 900 and the utility class for background is ```bg```. Therefore, to make our button's background a faint shade of green we add a class ```bg-green-100```.
+Let's add some classes to it now. First, Our button looks plain. In tailwind, color is based on the color intensity ranging from 100 to 900 and the utility class for background is `bg`. Therefore, to make our button's background a faint shade of green we add a class `bg-green-100`.
 
-Next, lets style the text. The 
+Next, lets style the text in the button. We use the utility class `text`. Color rules remain , hence to add text to the color, we add a class `text-green-100`.
+
+Our button is coming up nice, let's add some padding. For padding the syntax is fairly direct. It's the _property, size then the value_. This applies for all size and spacing properties as well, like margin. To add padding on the bottom, it would be `pb-8`. The value ranges from 0 to 64. To see how the ranges work indepth, check the [documentation](https://tailwindcss.com/docs/padding).
+
+In our example, our padding will be `py-2` for top and bottom and `px-6` for left and right. Let's add some margin on the top with `my-20` and some on the left with `mx-20`.
+
+Finally let's make the button more rounded with the `rounded` utility. A full list of the utility and all it's classes can be found in the [documentation](https://tailwindcss.com/docs/border-radius). We will use border radius of 0.5em which is `rounded-lg`.
+
+Finally, Let's add some hover magic to make the button more lively. To do so, we add the classes `hover:hover:bg-green-600` and `hover:text-green-200`.
+
+And just like that, we have styled our button with no css at all. The key thing to take away is how much control tailwind gives you over the styling and elements. To get the code for the tutorial, check [here](https://github.com/katungi/Section-tailwind-demo).
+
+Our final code looks like this:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Section-Tailwind-Demo</title>
+    <link rel="stylesheet" href="css/tailwind.css" />
+  </head>
+
+  <body>
+    <button
+      type="button"
+      class="hover:bg-green-600 hover:text-green-200 bg-green-100 text-green-700 mx-20 my-20 px-6 py-2 rounded-lg"
+    >
+      Section
+    </button>
+  </body>
+</html>
+```
+
+and our button looks like this:
+
+![Final Product](image/button.png)
+
+### Conclusion
+
+Tailwind css is a game changer to how we all use CSS. As demonstrated above, the utility classes are easy to learn and use.
+
+Tailwind also gives you more control over the look you want, which can be an advantage or a disadvantage. With other frameworks, the base look is usually good enough to get a developer started even with little code. That isn't the case with tailwind as you have to do everything yourself.
+
+Another thing to note is how all the css we used in the demo are added as classes, and as complexity grows, the code will get untidy, we will tackle that and a full demo in the next article.
+
+You should be able now to build simple layout using tailwind. You can use the official [documentation](https://tailwindcss.com/docs) to understand more.
