@@ -172,7 +172,7 @@ Within the Body tags in the HTML page, add:
 <button>Section</button>
 ```
 
-Let's add some classes to it now. First, Our button looks plain. In tailwind, the colour value ranges depending on the colour intensity from 100 to 900. The utility class for the background is `bg`. To make our button's background a faint shade of green, we add a class `bg-green-100`.
+Let's add some classes to our button because it looks plain. In tailwind, the colour value ranges depending on the colour intensity from 100 to 900. The utility class for the background is `bg`. To make our button's background a faint shade of green, we add a class `bg-green-100`.
 
 Next, let's style the text in the button. We use the utility class `text`. Colour rules remain, hence to add text to the colour, we add a class `text-green-100`.
 
