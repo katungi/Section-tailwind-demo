@@ -1,4 +1,4 @@
-### Getting Started with Tailwindcss  
+### Getting Started with Tailwindcss
 
 CSS technology was one of the biggest game-changers in web development. It allowed for more styling capabilities and freedom. As CSS grew, so did it's difficulty. CSS in retrospect is not challenging to write, but it can be tricky to implement.
 
