@@ -12,6 +12,8 @@ In this article, we will cover:
 - Different ways to install and configure tailwind,
 - and How to use utility-based classes over normal prewritten classes.
 
+To follow along with this tutorial easily, basic understanding of HTML and CSS is required. Understanding or previous interaction with any CSS frameworks is an added advantage.
+
 ### What is Tailwindcss
 
 Tailwindcss is also a CSS framework created by [Adam Wathan](https://twitter.com/adamwathan). Unlike other frameworks, it does not come prebuilt with classes that you can just add to the HTML tags and apply styling instantly. Instead it uses a different approach. It brings a much lower level of control by using utility-based classes.
